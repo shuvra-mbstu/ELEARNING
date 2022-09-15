@@ -1,0 +1,12 @@
+<div class="container">
+  <div class="album py-5 bg-light">
+    <div class="container">
+      <div class="card parent">
+        <div class="card-header bg-primary">
+          <h1>Available Videos In <%= @category.name %> Category</h1>
+        </div>
+        <%= render 'users/courses', courses: @courses %>
+      </div>
+    </div>
+  </div>
+</div>

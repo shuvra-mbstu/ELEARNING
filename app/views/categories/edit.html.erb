@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-6 col-md-offset-3">
+      <h1 class="text-center title">Edit Category</h1>
+      <br>
+      <%= render 'form', category: @category %>
+      <%= link_to 'Add Courses',
+                  add_courses_category_path(@category),
+                  class: "button btn btn-primary btn-bottom" %>
+      <%= link_to 'Delete Category',
+                  category_path(@category),
+                  method: :delete,
+                  data: { confirm: 'Are you sure?' },
+                  class: "button btn btn-danger btn-bottom" %>
+    </div>
+  </div>
+</div>

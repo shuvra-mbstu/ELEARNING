@@ -1,0 +1,23 @@
+<tr>
+  <td><%= link_to category.name.titleize, category_path(category) %></td>
+  <td><%= date_parses(category.created_at) %></td>
+  <td><%= category.courses.count %></td>
+  <div id="delete">
+    <td class="table__action">
+      <%= link_to 'View',
+                  category_path(category),
+                  class: "btn btn-success btn-sm" %>
+      <% if logged_in? && current_user.admin %>
+        <%= link_to 'Edit', 
+                    edit_category_path(category),
+                    class: "btn btn-primary btn-sm" %>
+        <%= link_to 'Delete',
+                    category_path(category),
+                    method: :delete,
+                    data: { confirm: 'Are you sure?' },
+                    class: "btn btn-danger btn-sm delete",
+                    remote: true %>
+      <% end %>
+    </td>
+  </div>
+</tr>

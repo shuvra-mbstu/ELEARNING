@@ -1,0 +1,20 @@
+<% courses.each do |course| %>
+  <div class="card bg-light child">
+    <div class="card-body">
+      <div class="card-top">
+        <h5 class="card-top__title"><%= course.title %></h5>
+        <p class="card-top__text">
+          <%= t('views.users.courses.last_updated', date: Date.parse(course.updated_at.to_s)) %>
+        </p>
+      </div>
+      <%= link_to 'View',
+          course_path(course),
+          class: "btn btn-primary" %>
+      <% if authorized?(course.author_id) %>
+        <%= link_to 'Edit',
+            edit_user_course_path(course.author_id, course.id),
+            class: "btn btn-secondary" %>
+      <% end %>
+    </div>
+  </div>
+<% end %>

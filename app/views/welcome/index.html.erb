@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="jumbotron">
+    <% if logged_in? %>
+      <h1 class="display-4"><%= link_to current_user.full_name, user_path(current_user) %></h1>
+      <p class="lead">
+        <%= t('views.welcome.taught_count', 
+              count: @taught_count,
+              course: humanize(Course, @taught_count).downcase) %>
+      </p>
+      <hr class="my-4">
+      <p class="lead">
+        <%= link_to t('views.welcome.explore_courses'),
+                    courses_path,
+                    class: "btn btn-primary btn-lg" %>
+        <%= link_to t('button.create', resource: humanize(Course)), 
+                    new_user_course_path(current_user.id),
+                    class: "btn btn-primary btn-lg" %>
+      </p>
+    <% else %>
+      <h1 class="display-4"><%= t('views.welcome.title') %></h1>
+      <p class="lead"><%= t('views.welcome.aim') %></p>
+      <hr class="my-4">
+      <p><%= t('views.welcome.join_us') %></p>
+      <p class="lead">
+        <%= link_to t('button.signup'), signup_path, class: "btn btn-primary btn-lg" %>
+        <%= link_to t('button.login'), login_path, class: "btn btn-secondary btn-lg" %>
+      </p>
+    <% end %>
+  </div>
+</div>

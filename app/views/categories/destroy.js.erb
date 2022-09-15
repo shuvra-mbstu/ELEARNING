@@ -1,0 +1,6 @@
+$('#ajax-flash').append("<%= j render partial: 'layouts/messages' %>");
+<% if @category.errors.blank? %>
+  $('.delete').bind('ajax:success',function(){
+    $(this).closest('tr').fadeOut();
+  });
+<% end %>

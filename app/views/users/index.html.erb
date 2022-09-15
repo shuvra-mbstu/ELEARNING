@@ -1,0 +1,22 @@
+<div class="album py-5 bg-light">
+  <div class="container">
+    <% @users.each do |user| %>
+      <div class="card text-center">
+        <div class="card-header bg-info">
+          <%= owner?(user.id) ?
+              t('views.users.profile_with_name', name: user.full_name) :
+              t('views.shared.profile') %>
+        </div>
+        <div class="card-body">
+          <h5 class="card-title"><%= user.full_name %></h5>
+          <p class="lead text-muted"><%= user.location %></p>
+          <p class="lead text-muted"><%= user.email %></p>
+          <%= link_to t('button.view', resource: t('views.shared.profile')), 
+                      user_path(user),
+                      class: "btn btn-primary" %>
+        </div>
+        <div class="card-footer"></div>
+      </div>
+    <% end %>
+  </div>
+</div>

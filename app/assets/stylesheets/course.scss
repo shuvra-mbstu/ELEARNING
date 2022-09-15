@@ -1,0 +1,35 @@
+#ajax-courses {
+  min-height: 50rem;
+}
+.course-card {
+  margin: 1rem 0rem;
+  height: 14rem;
+  &__header {
+    font-size: 1.5rem;
+    font-weight: 300;
+    background-color: $bg-primary;
+    color: $intense-white;
+    text-align: center;
+  }
+  &__text {
+    height: 3rem;
+    overflow: hidden;
+  }
+  &__btn {
+    margin-bottom: 1rem;
+    position: absolute;
+    bottom: 0;
+  }
+}
+.category_block {
+  a:hover {
+    background-color: $bg-primary;
+    color: $intense-white;
+  }
+  a:active {
+    background-color: $black;
+  }
+}
+.pagination {
+  margin-top: 20px;
+}

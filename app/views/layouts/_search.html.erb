@@ -1,0 +1,14 @@
+<%= simple_form_for :search,
+                    url: courses_path,
+                    method: 'GET',
+                    html: { class: "form-inline my-2 my-lg-0",
+                            onsubmit: 'return validate(event)' } do |f| %>
+  <%= f.input :query,
+              label: false,
+              placeholder: t('views.layouts.search_placeholder'),
+              input_html: { id: 'search-text', value: '' },
+              class: "form-control mr-sm-2" %>
+  <%= f.submit t('views.layouts.search'),
+                data: { disable_with: false },
+                class: "btn btn-outline-success my-2 my-sm-0 bg-light" %>
+<% end %>

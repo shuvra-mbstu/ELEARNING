@@ -1,0 +1,8 @@
+$('#new-category form').remove();
+$('#ajax-flash').append("<%= j render partial: 'layouts/messages' %>");
+<% if @category.id.present?  %>
+  $('#new-category a').show();
+  $('table#categories tbody').append("<%= j render @category %>")
+<% else %>
+  $('#new-category a').hide().parent().append("<%= j render 'form', category: @category %>")
+<% end %>

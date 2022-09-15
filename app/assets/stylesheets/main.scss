@@ -1,0 +1,91 @@
+html,
+body {
+  background-color: $cloud-gray-96;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+@mixin box_sizing {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.navbar {
+  background-color: $light-green !important;
+}
+
+.nav-link {
+  color: $intense-white !important;
+
+  &:hover {
+    background: $deep-green !important;
+    border-radius: 0.7rem;
+    transition: 0.7s ease;
+  }
+}
+
+#logo {
+  float: left;
+  font-size: 1.7em;
+  color: $intense-white;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  font-weight: bold;
+
+  &:hover {
+    background: $deep-green !important;
+    transition: 0.7s ease;
+    border-radius: 0.7rem;
+  }
+}
+
+.jumbotron {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: center;
+  background-color: $light-cyan !important;
+}
+
+#page-content {
+  flex: 1 0 auto;
+  background-color: $intense-white !important;
+}
+
+.form-style {
+  input,
+  textarea,
+  select,
+  button,
+  .uneditable-input {
+    border: 1px solid $gray;
+    margin-bottom: 1rem;
+    @include box_sizing;
+  }
+  input {
+    height: auto !important;
+  }
+  color: $dark-deep;
+  border-radius: 1rem;
+  border: 1px solid $dark-deep;
+  padding: 1.5rem;
+  background: $intense-white;
+  margin-bottom: 1rem;
+}
+.title {
+  color: $dark-deep;
+  border-radius: 0.8rem;
+  border: 1px solid $dark-gray;
+  padding: 0.8rem;
+  background: $light-cyan;
+  margin: 0.8rem 0 0 0;
+}
+
+.footer {
+  flex-shrink: none;
+  color: $white;
+  bottom: 0;
+  width: 100%;
+}

@@ -1,0 +1,29 @@
+<div class="container align-items-center">
+  <div class="table-responsive">
+    <div class="table-wrapper">
+      <h1 class="text-center title">
+        Add Courses to <%= @category.name %> Category
+      </h1>
+    </div>
+    <br>
+    <%= simple_form_for @category, url: update_courses_category_path(@category), method: :patch do |form| %>
+      <table class="table form-style">
+        <thead>
+          <tr>
+            <th>Select</th>
+            <th>Course Title</th>
+          </tr>
+        </thead>
+        <% @courses.each do |course| %>
+          <tbody>
+            <tr>
+              <td><%= check_box_tag "course_ids[]", course.id %></td>
+              <td><%= link_to course.title, course_path(course) %></td>
+            </tr>
+          </tbody>
+        <% end %>
+      </table>
+      <%= form.submit 'Update Courses', class: 'btn btn-success btn-lg' %>
+    <% end %>
+  </div>
+</div>

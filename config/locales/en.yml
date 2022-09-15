@@ -1,0 +1,107 @@
+---
+en:
+  action:
+    confirm: Are you sure?
+    signup_now: Sign up now!
+  activerecord:
+    attributes:
+      user:
+        email: Email
+        full_name: Full Name
+        location: Location
+        password: Password
+    models:
+      category:
+        one: Category
+        other: Categories
+      course:
+        one: Course
+        other: Courses
+      user:
+        one: User
+        other: Users
+  button:
+    author: Author's profile
+    create: Create %{resource}
+    delete: Delete %{resource}
+    edit: Edit %{resource}
+    enroll: Enroll
+    list: All %{resource}
+    login: Login
+    logout: Logout
+    new: Create New %{resource}
+    reset: Reset
+    signup: Signup
+    student: Enrolled students list
+    unenroll: Unenroll
+    view: View %{resource}
+  notice:
+    access_denied: Access denied!
+    create:
+      failure: "%{resource} could not be created."
+      success: "%{resource} has been created successfully!"
+    delete:
+      failure: "%{resource} could not be deleted"
+      success: "%{resource} has been deleted successfully!"
+    enroll:
+      failure: You can not be enrolled in the course!
+      success: You have successfully enrolled in the course!
+    record_not_found: "%{resource} with %{id} not found!"
+    require_login: You must be logged in to perform this action
+    sessions:
+      create:
+        failure: Invalid email/password combination.
+        success: You are now logged in.
+      logout: You have been logged out.
+    unenroll:
+      failure: Could not be unenrolled from the course!
+      success: Unenrolled from the course successfully!
+    update:
+      failure: "%{resource} could not be updated"
+      success: "%{resource} has been updated successfully!"
+    user_not_authorized: You are not authorized to perform this action!
+    search_alert: Please type minimum 3 chanracters to get search results.
+  views:
+    layouts:
+      eLearning: eLearning
+      manage: Manage %{resource}
+      my_courses: My Courses
+      people: People
+      search: Search
+      search_placeholder: Search Courses
+    search:
+      next: Next
+      not_found: No course found.
+      previous: Previous
+      title: 'Search Results For : %{query}'
+    shared:
+      account: Account
+      action: Action
+      course: Course
+      content: 'Content of the %{resource} : '
+      course_header: Listing Courses
+      credit_hours: 'Credit hours of the %{resource} : '
+      login_title: Login to eLearning
+      new: New %{resource}
+      profile: Profile
+      signup_title: Sign up for eLearning
+      title: 'Title of the %{resource} : '
+    users:
+      courses:
+        last_updated: 'Last updated: %{date}'
+        total_enrolled: Total %{count} students enrolled
+      enroll_new_course: Enroll in New Course
+      enrolled_courses: Enrolled Courses
+      enrolled_no_course: Didn't enroll in any course yet.
+      new_user: New user?
+      profile_with_name: Profile(%{name})
+      taught_courses: Taught Courses
+      taught_no_course: No course taught yet.
+      username: 'Username:'
+    welcome:
+      aim: We aim to simplify digital learning!
+      enrolled_count: 'Currently enrolled in: %{count} %{course}.'
+      explore_courses: Explore Courses
+      join_us: Join us today for free to learn and tech.
+      taught_count: 'Taught so far: %{count} %{course}.'
+      title: Welcome to eLearning System!

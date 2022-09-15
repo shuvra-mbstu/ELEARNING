@@ -1,0 +1,41 @@
+<div class="container">
+  <div class="album py-5 bg-light">
+    <div class="container">
+      <div class="card parent">
+        <div class="card-header bg-primary">
+          <h1><%= t('views.search.title', query: @query) %></h1>
+        </div>
+        <% if @courses.present? %>
+          <%= render 'users/courses', courses: @courses %>
+        <% else %>
+          <div class="card bg-light child">
+            <div class="card-body">
+              <p class="card-text"><%= t('views.search.not_found') %></p>
+            </div>
+          </div>
+        <% end %>
+        <div class="col-12 d-flex justify-content-center">
+          <nav aria-label="...">
+            <ul class="pagination">
+              <li class="page-item <%= "disabled" if @page <= 0 %>">
+                <%= link_to t('views.search.previous'),
+                            courses_path(search: { page: @page - 1, query: @query }),
+                            class: "page-link" %>
+              </li>
+              <li class="page-item active">
+                <%= link_to @page + 1,
+                            courses_path(search: { page: @page, query: @query }),
+                            class: "page-link" %>
+              </li>
+              <li class="page-item">
+                <%= link_to t('views.search.next'),
+                            courses_path(search: { page: @page + 1, query: @query }),
+                            class: "page-link" %>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

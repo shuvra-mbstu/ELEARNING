@@ -1,0 +1,9 @@
+<%= simple_form_for category, remote: true do |f| %>
+  <div class="form-style">
+    <%= render "shared/errors", obj: category %>
+    <%= f.error_notification %>
+    <%= f.input :name, label: 'Name', required: true %>
+    <%= f.button :submit, class: "btn-primary" %>
+    <%= f.button :button, 'Reset', type: 'reset', class: "btn-outline-secondary" %>
+  </div>
+<% end %>

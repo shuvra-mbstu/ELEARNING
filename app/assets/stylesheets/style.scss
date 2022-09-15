@@ -1,0 +1,40 @@
+.thumbnail {
+  border:none !important;
+  padding:0 !important;
+  position: relative;
+  background: #000;
+  margin: 5px;
+
+&:hover {
+  img {
+      opacity: 0.5;
+  }
+
+  span.text {
+      visibility: visible;
+      opacity: 1;
+  }
+}
+
+img {
+  min-height: 100%;
+  min-width: 100%;
+  -webkit-transition: .3s ease-in-out;
+  transition: .3s ease-in-out;
+}
+
+span.text {
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  top:82%;
+  left: 30%;
+  font-weight: 700;
+  font-family:"Source Sans", sans-serif;
+  font-size: 18px;
+  color:#FFF !important;
+  text-transform: uppercase;
+   -webkit-transition: .8s ease-in-out;
+  transition: .8s ease-in-out;
+}
+}

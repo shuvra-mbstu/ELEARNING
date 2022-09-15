@@ -1,0 +1,25 @@
+<div class="">
+  <%= render "shared/errors", obj: course %>
+  <%= simple_form_for [current_user, course] do |f| %>
+    <div class='form-group'>
+      <%= f.label :video_tutorial %>
+      <%= f.file_field :video_tutorial, direct_upload: true, class: 'form-control' %>
+    </div>
+    <div class='form-group'>
+      <%= f.label :thumbnails %>
+      <%= f.file_field :thumbnails, direct_upload: true, class: 'form-control' %>
+    </div>
+    <%= f.error_notification %>
+    <%= f.input :title, required: true %>
+
+    <%= f.input :category_id,
+                as: :select,
+                collection: Category.all,
+                prompt: 'Select Category',
+                required: true %>
+    <%= f.button :submit, 'Create', class: 'btn-primary btn-bottom' %>
+    <%= f.button :button, t('button.reset'),
+                          type: 'reset', 
+                          class: "btn-outline-secondary btn-bottom" %>
+  <% end %>
+</div>

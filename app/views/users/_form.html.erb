@@ -1,0 +1,14 @@
+<div class="form-style ">
+  <%= render "shared/errors", obj: user %>
+  <%= simple_form_for user do |f| %>
+    <%= f.error_notification %>
+    <%= f.input :full_name, required: true %>
+    <%= f.input :email, input_html: { autocomplete: 'email' },  required: true %>
+    <%= f.input :password, input_html: { autocomplete: 'current-password' }, required: true %>
+    <%= f.input :location %>
+    <%= f.button :submit, class: 'btn-primary' %>
+    <%= f.button :button, t('button.reset'),
+                          type: 'reset', 
+                          class: "btn-outline-secondary" %>
+  <% end %>
+</div>

@@ -1,0 +1,54 @@
+.table-responsive {
+  margin: 2rem 0;
+}
+
+.table-wrapper {
+  width: 90%;
+  margin: 0 auto;
+  padding: 1.25rem 1.8rem 0.4rem;
+  box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.25);
+}
+
+.table-title {
+  min-width: 100%;
+  padding-bottom: 1rem;
+  margin-bottom: 0.4rem;
+  background: $bg-info;
+  margin: -1.25rem -2rem 0.65rem;
+  padding: 1rem 1.8rem;
+  color: $intense-white;
+  text-align: center;
+  .table-title__text {
+    margin: 0.15rem 0 0;
+    font-size: 2.2rem;
+    font-style: bold;
+  }
+}
+
+table.table {
+  tr th,
+  tr td {
+    border-color: $light-cyan;
+    background-color: $intense-white;
+    padding: 0.75rem 1rem;
+    vertical-align: middle;
+    justify-content: center;
+  }
+  tr th:last-child {
+    display: flex;
+    align-self: center;
+  }
+}
+
+table.table-striped {
+  .table__action {
+    display: flex;
+    justify-self: center;
+  }
+  .btn {
+    color: $intense-white;
+    margin: 0 0.3rem;
+    padding: 0.3rem;
+    width: 3.5rem;
+  }
+}

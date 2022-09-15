@@ -1,0 +1,10 @@
+$('a').removeClass('hover')
+
+$( "#on-hover a" ).on('hover'
+  function() {
+    $( this ).addClass( "hover" );
+  }, function() {
+    $( this ).removeClass( "hover" );
+  }
+);
+

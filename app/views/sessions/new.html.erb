@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-6 col-md-offset-3">
+      <h1 class="text-center title"><%= t('views.shared.login_title') %></h1>
+      <br>
+      <div class="form-style">
+        <%= simple_form_for :session, url: login_path do |f| %>
+          <%= f.input :email, input_html: { autocomplete: 'email' }, required: true %>
+          <%= f.input :password, input_html: { autocomplete: 'current-password' }, required: true %>
+          <%= f.input :remember_me, as: :boolean, inline_label: true %>
+          <%= f.button :submit, t('button.login'), class: 'btn-primary' %>
+          <%= f.button :button, t('button.reset'), type: 'reset', class: 'btn-outline-secondary' %>
+        <% end %>
+        <p><%= t('views.users.new_user') %><%= link_to t('action.signup_now'), signup_path %></p>
+      </div>
+    </div>
+  </div>
+</div>

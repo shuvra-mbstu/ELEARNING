@@ -1,0 +1,24 @@
+<main role="main">
+  <%= render 'header', user: @user %>
+  <div class="album py-5 bg-light">
+    <div class="container">
+      <div id="taught_courses" class="card parent">
+        <div class="card-header bg-primary"><%= 'Uploaded Videos' %></div>
+        <% if @taught_courses.present? %>
+          <%= render 'courses', courses: @taught_courses %>
+        <% else %>
+          <div class="card bg-light child">
+            <div class="card-body">
+              <p class="card-text"><%= 'No Uploaded Videos' %></p>
+            </div>
+          </div>
+        <% end %>
+        <% if owner?(@user.id) %>
+          <%= link_to 'Upload New Videos',
+                      new_user_course_path(@user),
+                      class: "btn btn-lg btn-outline-success btn-bottom" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</main>

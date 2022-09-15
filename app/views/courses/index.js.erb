@@ -1,0 +1,9 @@
+$('a').removeClass('active')
+<% if params[:category_id] %>
+$('a[href$="=<%= params[:category_id] %>"]').addClass('active') 
+<% else %>
+$('a[href$="/courses"]').addClass('active') 
+<% end %>
+$('#courses-view').html("<%= j render 'courses/course', courses: @courses %>")
+var scrollPos =  $("#courses-view").offset().top;
+$(window).scrollTop(scrollPos);

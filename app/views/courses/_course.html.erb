@@ -1,0 +1,53 @@
+<div class = "row" id="ajax-courses">
+  <% if courses.present? %>
+    <% courses.each do |course| %>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8">
+            <link href="https://vjs.zencdn.net/7.20.2/video-js.css" rel="stylesheet" />
+              <script src="https://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script>
+              <h1 class="mt-4"><%= course.title %></h1>
+              <span class="text"><%= course.category.name %></span>
+              <div class="on-hover">
+                <video
+                  id="my-video"
+                  class="video-js"
+                  controls
+                  preload="auto"
+                  width="256"
+                  height="256"
+                  poster="<%= url_for(course.thumbnails.first) %>"
+                  alt="<% course.title %>"
+                  data-setup="{}"
+                >
+                  <source src="<%= url_for(course.video_tutorial) %>%" type="video/mp4" />
+                  <source src="<%= url_for(course.video_tutorial) %>%" type="video/mov" />
+                  <p class="vjs-no-js">
+                    <a href="https://videojs.com/html5-video-support/" target="_blank"
+                      ></a
+                    >
+                  </p>
+                  </video>
+                </div>
+              <hr>
+              <% if authorized?(course.author_id) %>
+                <%= link_to t('button.edit', resource: humanize(Course)),
+                    edit_user_course_path(course.author_id, course.id),
+                    class: "btn btn-secondary" %>
+              <% end %>
+            <script src="https://vjs.zencdn.net/7.20.2/video.min.js"></script>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  <% else %>
+    <div class="col-10 course-card">
+      <div class="card bg-light child">
+        <div class="card-body">
+          <p class="card-text">No Courses/Videos for this category.</p>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
+<%= paginate @courses, params: { category_id: params[:category_id] }, remote: true %>
