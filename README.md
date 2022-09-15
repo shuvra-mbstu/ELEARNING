@@ -5,14 +5,6 @@
 
 In this system, user can upload videos and see other user contents.
 
-<p float="left" align="center">
-  <img src="public/images/profile.png" width="200"/>
-  <img src="public/images/elearningsystem.png" width="200" />
-  <img src="public/images/courses.png" width="200"> 
-  <img src="public/images/categories.png" width="200"> 
-</p>
-
-
 ## Run the Project in Development
 
 First we need to setup Rails environment in our system. If you have already setup rails environment, please move to the next section.
@@ -75,3 +67,9 @@ password: `secret`
 - Run RSpec: `rspec spec`
 - Reset Seed: `rails db:seed:replant`
 - Rails Database Console: `rails dbconsole`
+
+
+Over view of the APP:
+
+https://user-images.githubusercontent.com/67682425/190475315-a17512d3-9fd1-4279-a59c-dba231945126.mp4
+
